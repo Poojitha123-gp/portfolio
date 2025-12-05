@@ -523,6 +523,22 @@
     margin: 24px auto 0;
   }
 }
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: nowrap !important;   /* keep two columns on desktop */
+  padding: 4rem 3rem;             /* ⬅ add back spacing */
+  min-height: 90vh;               /* ⬅ add back height */
+  position: relative;             /* for the scroll hint positioning */
+}
+.profile-container {
+  flex: 0 0 320px;
+  min-width: 320px;
+  margin-left: auto;   /* ⬅ pin to the right */
+  margin-right: 0;
+}
 
 
  
@@ -946,6 +962,7 @@ This project demonstrates cloud-native design principles, serverless automation,
 
 </body>
 </html>
+
 
 
 
