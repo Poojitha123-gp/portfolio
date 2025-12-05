@@ -471,26 +471,27 @@
     justify-self: end;                 /* pin to the right edge */
   }
 }
-/* ==== FINAL, authoritative layout for the hero section ==== */
-
-/* default (mobile/tablet) */
+/* ===== FINAL hero layout: text left, photo right ===== */
 .hero{
+  /* page-wide feel */
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 4rem 3rem;
   position: relative;
   min-height: 90vh;
 }
 
+/* Base photo box size */
 .profile-container{
   position: relative;
-  width: 340px;
-  height: 340px;
-  margin-left: auto;   /* on small screens it can still sit to the right */
+  width: 360px;
+  height: 360px;
 }
 
-/* Desktop: lock to two columns with the photo on the right */
+/* Desktop/tablet ≥ 992px: two columns */
 @media (min-width: 992px){
   .hero{
-    display: grid;                           /* use grid instead of flex */
+    display: grid !important;                       /* force grid */
     grid-template-columns: minmax(0, 640px) 360px;  /* text | photo */
     align-items: center;
     column-gap: 3rem;
@@ -502,48 +503,37 @@
   .profile-container{
     width: 360px;
     height: 360px;
-    margin: 0;                               /* no stray margins */
-    justify-self: end;                       /* pin to the right edge */
+    margin: 0;                 /* no stray margins */
+    justify-self: end;         /* stick to the right edge */
+    align-self: center;        /* vertically centered with the text */
   }
 }
 
-/* Social icons row (keeps them in one neat line) */
+/* Mobile < 992px: stack naturally (photo below text, centered) */
+@media (max-width: 991.98px){
+  .hero{ display:block; }
+  .profile-container{
+    width: 280px;
+    height: 280px;
+    margin: 24px auto 0;       /* center under the text */
+  }
+}
+
+/* Social row: keep in a single line so it never pushes the photo */
 .social-icons{
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  flex-wrap: nowrap;                         /* don’t wrap under the photo */
-  margin-top: 14px;
+  display:flex; gap:14px; align-items:center; flex-wrap:nowrap; margin-top:14px;
 }
-
-.social-icons a{                             /* the round buttons */
-  display: inline-flex;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform .2s ease, background .2s ease;
+.social-icons a{
+  display:inline-flex; width:48px; height:48px; border-radius:50%;
+  background:#fff; box-shadow:0 4px 10px rgba(0,0,0,.08);
+  align-items:center; justify-content:center; text-decoration:none;
+  transition:transform .2s, background .2s;
 }
-.social-icons a:hover{
-  transform: scale(1.08);
-  background: #f2f6ff;
-}
-
-/* size the SVG marks inside the buttons */
-.social-icons svg{
-  width: 26px;
-  height: 26px;
-  display: block;
-}
-
-/* brand tints (optional) */
-.social-icons a[href*="linkedin"] svg { fill: #0A66C2; }
-.social-icons a[href*="github"]   svg { fill: #000000; }
-.social-icons a[href^="mailto:"]  svg { fill: #e03a3a; }
+.social-icons a:hover{ transform:scale(1.08); background:#f2f6ff; }
+.social-icons svg{ width:26px; height:26px; display:block; }
+.social-icons a[href*="linkedin"] svg { fill:#0A66C2; }
+.social-icons a[href*="github"]   svg { fill:#000; }
+.social-icons a[href^="mailto:"]  svg { fill:#e03a3a; }
 
 
   
@@ -962,6 +952,7 @@ This project demonstrates cloud-native design principles, serverless automation,
 
 </body>
 </html>
+
 
 
 
