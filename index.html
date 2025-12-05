@@ -449,31 +449,38 @@
 
 
 
-/* Mobile < 992px: stack naturally (photo below text, centered) */
+
+
+/* Desktop/tablet ≥ 992px: two columns */
+@media (min-width: 992px){
+  .hero{
+    display: grid !important;                       /* force grid */
+    grid-template-columns: minmax(0, 640px) 360px;  /* text | photo */
+    align-items: center;
+    column-gap: 3rem;
+  }
+  .hero-content{
+    max-width: none;
+    min-width: 0;
+  }
+  .profile-container{
+    width: 360px;
+    height: 360px;
+    margin: 0;                 /* no stray margins */
+    justify-self: end;         /* stick to the right edge */
+    align-self: center;        /* vertical align */
+  }
+}
+
+/* Mobile < 992px: stack (photo centered under text) */
 @media (max-width: 991.98px){
   .hero{ display:block; }
   .profile-container{
     width: 280px;
     height: 280px;
-    margin: 24px auto 0;       /* center under the text */
+    margin: 24px auto 0;
   }
 }
-
-/* Social row: keep in a single line so it never pushes the photo */
-.social-icons{
-  display:flex; gap:14px; align-items:center; flex-wrap:nowrap; margin-top:14px;
-}
-.social-icons a{
-  display:inline-flex; width:48px; height:48px; border-radius:50%;
-  background:#fff; box-shadow:0 4px 10px rgba(0,0,0,.08);
-  align-items:center; justify-content:center; text-decoration:none;
-  transition:transform .2s, background .2s;
-}
-.social-icons a:hover{ transform:scale(1.08); background:#f2f6ff; }
-.social-icons svg{ width:26px; height:26px; display:block; }
-.social-icons a[href*="linkedin"] svg { fill:#0A66C2; }
-.social-icons a[href*="github"]   svg { fill:#000; }
-.social-icons a[href^="mailto:"]  svg { fill:#e03a3a; }
 
 
   
@@ -892,6 +899,7 @@ This project demonstrates cloud-native design principles, serverless automation,
 
 </body>
 </html>
+
 
 
 
