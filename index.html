@@ -109,27 +109,9 @@
       color: var(--clr-blue);
     }
 
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 4rem 3rem;
-      flex-wrap: wrap;
-      position: relative;
-      min-height: 90vh;
-    }
+    
 
-
-    .hero-content {
-      max-width: 600px;
-      padding: 1rem;
-    }
-
-    .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
+    
     .highlight {
       background: linear-gradient(90deg, var(--clr-blue), var(--clr-purple));
       -webkit-background-clip: text;
@@ -498,6 +480,50 @@
 @media (max-width: 992px) {
   .hero { flex-wrap: wrap; }
 }
+    /* === HERO LAYOUT FIX — paste at the VERY end === */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: nowrap !important;   /* keep two columns on desktop */
+}
+
+.hero-content {
+  flex: 1 1 0;                    /* allow left column to shrink */
+  min-width: 0;                   /* CRUCIAL: lets content/icons shrink */
+  max-width: 520px;               /* a touch narrower to avoid pressure */
+}
+
+.profile-container {
+  flex: 0 0 320px;                /* fixed right column */
+  min-width: 320px;
+  margin: 0 0 0 2rem;             /* small gap from the left column */
+}
+
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: nowrap;              /* keep icons in one row */
+}
+
+.icon {                           /* slightly smaller circles */
+  width: 44px;
+  height: 44px;
+}
+
+/* Mobile/tablet: allow stacking */
+@media (max-width: 992px) {
+  .hero { flex-wrap: wrap !important; }
+  .hero-content { max-width: 100%; }
+  .profile-container {
+    flex: 1 1 100%;
+    min-width: 0;
+    margin: 24px auto 0;
+  }
+}
+
 
  
 
@@ -920,6 +946,7 @@ This project demonstrates cloud-native design principles, serverless automation,
 
 </body>
 </html>
+
 
 
 
