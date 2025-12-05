@@ -539,6 +539,43 @@
   margin-left: auto;   /* ⬅ pin to the right */
   margin-right: 0;
 }
+      /* Mobile/tablet: allow stacking */
+  @media (max-width: 992px) {
+    .hero { flex-wrap: wrap !important; }
+    .hero-content { max-width: 100%; }
+    .profile-container { flex: 1 1 100%; min-width: 0; margin: 24px auto 0; }
+  }
+
+/* ⬇️ Paste this block here, before </style> */
+@media (min-width: 993px){
+  .hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:2rem;
+    padding:4rem 3rem;
+    min-height:90vh;
+    position:relative;
+    flex-wrap:nowrap !important;
+  }
+  .hero-content{
+    flex:0 1 560px;
+    min-width:0;
+  }
+  .profile-container{
+    flex:0 0 340px;
+    min-width:340px;
+    margin-left:auto;
+    margin-right:0;
+    align-self:center;
+  }
+  .social-icons{ flex-wrap:nowrap; gap:.8rem; margin-top:1rem; }
+  .icon{ width:44px; height:44px; }
+}
+/* ⬆️ End paste */
+
+</style>
+
 
 
  
@@ -962,6 +999,7 @@ This project demonstrates cloud-native design principles, serverless automation,
 
 </body>
 </html>
+
 
 
 
