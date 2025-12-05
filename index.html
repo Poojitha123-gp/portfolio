@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Maddikera Poojitha | Portfolio</title>
   <style>
- 
-  .scroll-down {
+ .scroll-down {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -110,7 +109,15 @@
       color: var(--clr-blue);
     }
 
-  
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 3rem;
+      flex-wrap: wrap;
+      position: relative;
+      min-height: 90vh;
+    }
 
 
     .hero-content {
@@ -358,7 +365,12 @@
         flex: 1 1 100%;
       }
 
-      
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
       .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -394,7 +406,14 @@
      color: #b36b00;
      border: 1px solid #ffc266;
     }
- 
+    .profile-container {
+       position: relative;
+       width: 320px;
+       height: 320px;
+      margin-left: auto;
+      margin-right: 60px;
+    }
+
     .gear-frame {
   width: 100%;
   height: 100%;
@@ -444,57 +463,6 @@
   transform: translate(-50%, 50%);
   background-color: #00c853;
    }
-    /* ==== FINAL OVERRIDES (put at the very end) ==== */
-
-/* Kill old image-frame look so it can't stretch into a pill */
-.image-frame { display: none !important; }
-
-/* Use the gear-frame circle */
-.profile-container {
-  position: relative;
-  width: 360px;
-  height: 360px;
-}
-
-/* Base hero spacing */
-.hero{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 3rem;
-  position: relative;
-  min-height: 90vh;
-}
-
-/* Desktop/tablet ≥ 992px: two columns, photo on the right */
-@media (min-width: 992px){
-  .hero{
-    display: grid !important;                       /* override old flex */
-    grid-template-columns: minmax(0, 640px) 360px;  /* text | photo */
-    align-items: center;
-    column-gap: 3rem;
-  }
-  .hero-content{ max-width: none; min-width: 0; }
-  .profile-container{
-    margin: 0 !important;       /* remove any stray margins */
-    justify-self: end;           /* stick to the right edge */
-    align-self: center;
-  }
-}
-
-/* Mobile: stack, center the photo */
-@media (max-width: 991.98px){
-  .hero{ display: block !important; }
-  .profile-container{
-    width: 280px; height: 280px;
-    margin: 24px auto 0 !important;
-  }
-}
-
-  
-
-
-
-
 
 
 
@@ -910,6 +878,7 @@ This project demonstrates cloud-native design principles, serverless automation,
 
 </body>
 </html>
+
 
 
 
