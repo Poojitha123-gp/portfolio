@@ -444,49 +444,60 @@
   transform: translate(-50%, 50%);
   background-color: #00c853;
    }
-  
+    /* ==== FINAL OVERRIDES (put at the very end) ==== */
 
+/* Kill old image-frame look so it can't stretch into a pill */
+.image-frame { display: none !important; }
 
+/* Use the gear-frame circle */
+.profile-container {
+  position: relative;
+  width: 360px;
+  height: 360px;
+}
 
+/* Base hero spacing */
+.hero{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  position: relative;
+  min-height: 90vh;
+}
 
-
-
-/* Desktop/tablet ≥ 992px: two columns */
+/* Desktop/tablet ≥ 992px: two columns, photo on the right */
 @media (min-width: 992px){
   .hero{
-    display: grid !important;                       /* force grid */
+    display: grid !important;                       /* override old flex */
     grid-template-columns: minmax(0, 640px) 360px;  /* text | photo */
     align-items: center;
     column-gap: 3rem;
   }
-  .hero-content{
-    max-width: none;
-    min-width: 0;
-  }
+  .hero-content{ max-width: none; min-width: 0; }
   .profile-container{
-    width: 360px;
-    height: 360px;
-    margin: 0;                 /* no stray margins */
-    justify-self: end;         /* stick to the right edge */
-    align-self: center;        /* vertical align */
+    margin: 0 !important;       /* remove any stray margins */
+    justify-self: end;           /* stick to the right edge */
+    align-self: center;
   }
 }
 
-/* Mobile < 992px: stack (photo centered under text) */
+/* Mobile: stack, center the photo */
 @media (max-width: 991.98px){
-  .hero{ display:block; }
+  .hero{ display: block !important; }
   .profile-container{
-    width: 280px;
-    height: 280px;
-    margin: 24px auto 0;
+    width: 280px; height: 280px;
+    margin: 24px auto 0 !important;
   }
 }
 
-
   
 
 
-  
+
+
+
+
+
 
 
   </style>
@@ -899,6 +910,7 @@ This project demonstrates cloud-native design principles, serverless automation,
 
 </body>
 </html>
+
 
 
 
