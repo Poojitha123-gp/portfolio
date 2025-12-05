@@ -108,6 +108,26 @@
     .navbar nav a:hover {
       color: var(--clr-blue);
     }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 3rem;
+      flex-wrap: wrap;
+      position: relative;
+      min-height: 90vh;
+    }
+    
+    .hero-content {
+      max-width: 600px;
+      padding: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
 
     
 
@@ -167,11 +187,11 @@
       padding: 1rem;
     }
 
-   .image-frame {
-      width: 230px;
-      height: 230px;
-      border-radius: 30%;
-      border: 6px solid #e0e5ec;
+    .image-frame {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 8px solid #e0e5ec;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -193,31 +213,31 @@
   border: 5px solid #fff; /* White inner border */
   }
 
-    .image-frame {
+   .image-frame {
   position: relative;
-  width: 230px;
-  height: 230px;
-  border-radius: 30%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
   background: linear-gradient(to right, #3366ff, #22bb55);
-  padding: 8px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
    }
 
-  .image-frame::before, .image-frame::after {
+ .image-frame::before, .image-frame::after {
   content: "";
   position: absolute;
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: 15px;
   background-color: #3366ff;
-  border-radius: 30%;
+  border-radius: 50%;
   animation: float 3s infinite ease-in-out;
   }
 
  .image-frame::before {
-  top: -8px;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
   }
@@ -472,35 +492,7 @@
 .icon.github svg { fill: #000000; }       /* ensure black */
 .icon.linkedin svg { fill: #0A66C2; }     /* LinkedIn blue */
 
-/* IMPORTANT: prevent desktop wrapping so photo won’t shift */
-.hero { flex-wrap: nowrap; }              /* override your wrap */
-.hero-content { max-width: 560px; }       /* a touch narrower */
-
-/* allow wrap only on smaller screens */
-@media (max-width: 992px) {
-  .hero { flex-wrap: wrap; }
-}
-    /* === HERO LAYOUT FIX — paste at the VERY end === */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: nowrap !important;   /* keep two columns on desktop */
-}
-
-.hero-content {
-  flex: 1 1 0;                    /* allow left column to shrink */
-  min-width: 0;                   /* CRUCIAL: lets content/icons shrink */
-  max-width: 520px;               /* a touch narrower to avoid pressure */
-}
-
-.profile-container {
-  flex: 0 0 320px;                /* fixed right column */
-  min-width: 320px;
-  margin: 0 0 0 2rem;             /* small gap from the left column */
-}
-
+/
 .social-icons {
   margin-top: 1rem;
   display: flex;
@@ -523,45 +515,8 @@
     margin: 24px auto 0;
   }
 }
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: nowrap !important;   /* keep two columns on desktop */
-  padding: 4rem 3rem;             /* ⬅ add back spacing */
-  min-height: 90vh;               /* ⬅ add back height */
-  position: relative;             /* for the scroll hint positioning */
-}
-.profile-container {
-  flex: 0 0 320px;
-  min-width: 320px;
-  margin-left: auto;   /* ⬅ pin to the right */
-  margin-right: 0;
-}
-   /* Force 2 columns on desktop with Grid (rock solid) */
-@media (min-width: 993px){
-  .hero{
-    display: grid;                     /* overrides earlier flex */
-    grid-template-columns: 1fr 340px;  /* text | photo */
-    align-items: center;
-    column-gap: 2rem;
-    padding: 4rem 3rem;
-    min-height: 90vh;
-    position: relative;
-  }
-  .hero-content{
-    max-width: none;                   /* let grid handle widths */
-    min-width: 0;
-  }
-  .profile-container{
-    width: 340px;                      /* match grid col */
-    min-width: 340px;
-    margin: 0;                         /* remove side margins */
-    justify-self: end;                 /* pin to the right edge */
-  }
-}
 
+   /
 
 
 
@@ -986,6 +941,7 @@ This project demonstrates cloud-native design principles, serverless automation,
 
 </body>
 </html>
+
 
 
 
