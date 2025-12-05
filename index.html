@@ -486,53 +486,38 @@
   background: #e6edff;
   transform: scale(1.1);
 }
-    /* Contact Box */
-.contact-box {
-  margin-top: 1.5rem;
+   .contact-inline {
+  margin-top: 1rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  background: #f0f4ff;
-  padding: 12px 20px;
-  border-radius: 40px;
-  width: fit-content;
-  box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
-  animation: fadeIn 1.5s ease-in-out;
+  justify-content: flex-start;
+  gap: 0.6rem;
 }
 
-.contact-wrapper {
-  margin-top: 10px;
-  margin-left: 5px;
+.email-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff3c00, #ff7043);
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(255, 85, 0, 0.3);
+  transition: 0.3s ease;
 }
 
-.contact-title {
+.email-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(255, 85, 0, 0.4);
+}
+
+.contact-text {
   font-size: 1rem;
   font-weight: 600;
   color: #333;
 }
 
-.email-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  background: #3366ff;
-  color: white;
-  text-decoration: none;
-  border-radius: 20px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: 0.3s ease;
-  box-shadow: 0 3px 10px rgba(51, 102, 255, 0.3);
-}
 
-.email-btn:hover {
-  background: #1e57e6;
-  transform: translateY(-2px);
-}
 
 
 
@@ -605,15 +590,11 @@
       8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
     </svg>
   </a>
-         <div class="contact-wrapper">
-  <div class="contact-title">📬 Contact Me</div>
-
-  <a href="mailto:maddikerapoojitha@gmail.com" class="email-btn">
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff">
-      <path d="M12 13.065L.015 6h23.97L12 13.065zM12 15l12-7.059V18H0V7.941L12 15z"/>
-    </svg>
-    <span>Email Me</span>
+       <div class="contact-inline">
+  <a href="mailto:maddikerapoojitha@gmail.com" class="email-circle" title="Email Me">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Email" width="20" height="20">
   </a>
+  <span class="contact-text">Let's Connect!</span>
 </div>
 
 
@@ -950,6 +931,7 @@ This project demonstrates cloud-native design principles, serverless automation,
 
 </body>
 </html>
+
 
 
 
